@@ -22,11 +22,29 @@ vim.cmd([[
 ]])
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  -- 主题
   use { "ellisonleao/gruvbox.nvim" }
+  -- 显示栏
   use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+  -- 文件树
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+      },
+      config = function()
+        require("nvim-tree").setup {}
+      end
+    }
+  -- 窗口切换   使用ctrl+hjkl切换窗口 warn: 目前和键盘改键软件冲突 
+  use ("christoomey/vim-tmux-navigator")
+  -- 代码高亮
+  use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'} 
+  -- 括号高亮
+  use "p00f/nvim-ts-rainbow"
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'

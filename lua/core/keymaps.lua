@@ -20,3 +20,12 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 
 -- 取消高亮  leader+nh
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- no high light
+
+-- nvim-tree plugin  : leader + e 切换显示
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- vim-tmux-navigatorv plugin  ctrl + hjkl
+-- keymap.set("n", "<C-h>", ":TmuxNavigateLeft")
+-- keymap.set("n", "<C-j>", ":TmuxNavigateDown")
+-- keymap.set("n", "<C-k>", ":TmuxNavigateUp")
+-- keymap.set("n", "<C-l>", ":TmuxNavigateRight")
